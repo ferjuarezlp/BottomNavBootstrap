@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BottomNavigationBootstrap</string>
+
+    <string name="label_home">INICIO</string>
+    <string name="label_sync">SINCRONIZAR</string>
+    <string name="label_settings">CONFIGURAR</string>
+
+    <string name="error_message_user_pass">Usuario o contraseña invalidos</string>
+    <string name="error_user_auth">Error al autentificarse</string>
+    <string name="error_message_generic">Error al conectarse al servidor</string>
+
+</resources>

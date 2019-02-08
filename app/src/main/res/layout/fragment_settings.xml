@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnCloseSession"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnSave"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:layout_weight="0.5"
+        android:text="@string/title_close_session" />
+
+    <Button
+        android:id="@+id/btnSave"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_weight="0.5"
+        android:layout_alignParentBottom="true"
+        android:text="@string/label_save" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/margin_max"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/margin_min"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/SubtitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_min"
+                android:fontFamily="@font/arimo"
+                android:text="@string/title_relevator" />
+
+            <View
+                style="@style/DividerStyle"
+                android:layout_width="match_parent"></View>
+
+            <TextView
+                android:id="@+id/textViewRelevador"
+                style="@style/SubtitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_min"
+                android:fontFamily="@font/arimo"
+                android:text="@string/title_relevator"
+                android:textSize="@dimen/text_subtitle_min"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/SubtitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_min"
+                android:fontFamily="@font/arimo"
+                android:text="@string/title_configure_travel" />
+
+            <View
+                style="@style/DividerStyle"
+                android:layout_width="match_parent"></View>
+
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:id="@+id/spinnerTravel"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginRight="@dimen/margin_min"
+                app:ms_dropdown_max_height="200dp"
+                android:nestedScrollingEnabled="true"
+                android:layout_weight="0.5"
+                android:ellipsize="end"
+                android:maxLines="1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
