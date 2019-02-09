@@ -39,14 +39,6 @@ public class SplashPresenter implements SplashContract.Presenter {
     public void getAllLookups() {
     }
 
-    @Override
-    public void checkIsLogged(boolean demoMode) {
-        if(demoMode){
-            splashView.startLoginActivity();
-        } else {
-            checkIsLogged();
-        }
-    }
 
     @Override
     public void checkIsLogged() {
@@ -63,7 +55,6 @@ public class SplashPresenter implements SplashContract.Presenter {
         } catch (SharedException e) {
             e.printStackTrace();
         }
-
     }
 
     private void startWithDelay(){

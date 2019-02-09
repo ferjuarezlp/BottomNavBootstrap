@@ -58,9 +58,6 @@ public class HomeFragment extends BaseFragment implements HomeContract.View {
     public void onAddArticleClick() {
     }
 
-    @OnClick(R.id.btnAddShop)
-    public void onAddShopClick() {
-    }
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {

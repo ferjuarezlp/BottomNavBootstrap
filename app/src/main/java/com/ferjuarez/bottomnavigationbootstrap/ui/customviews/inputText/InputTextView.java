@@ -113,14 +113,6 @@ public class InputTextView extends CustomBaseView implements InputTextViewInterf
     /**
      * Getters & Setters
      */
-
-    /*private void customizeFont(){
-        Typeface typeface = Typeface.createFromAsset(getContext().getAssets(), "fonts/Raleway-Regular.ttf");
-        if (typeface == null)
-            return;
-        editText.setTypeface(typeface);
-        textInputLayout.setTypeface(typeface);
-    }*/
     public String getText() {
         return editText.getText().toString();
     }

@@ -15,8 +15,6 @@ public interface SplashContract {
 
         void getAllLookups();
 
-        void checkIsLogged(boolean demoMode);
-
         void checkIsLogged();
 
         void doDispose();

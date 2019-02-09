@@ -2,6 +2,8 @@ package com.ferjuarez.bottomnavigationbootstrap;
 
 import android.app.Activity;
 import com.ferjuarez.bottomnavigationbootstrap.injection.app.AppComponent;
+import com.ferjuarez.bottomnavigationbootstrap.injection.app.DaggerAppComponent;
+
 import javax.inject.Inject;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;

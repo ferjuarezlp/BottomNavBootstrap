@@ -27,6 +27,7 @@ public class LoginPresenter extends BasePresenter implements LoginContract.Prese
 
     @Override
     public void getAllLookups() {
+        loginFragmentView.startMainActivity();
         /*dataManager.getAllLookups()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

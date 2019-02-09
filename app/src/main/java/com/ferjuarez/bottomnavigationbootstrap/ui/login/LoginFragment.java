@@ -10,12 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
-
 import com.ferjuarez.bottomnavigationbootstrap.R;
 import com.ferjuarez.bottomnavigationbootstrap.ui.base.BaseFragment;
+import com.ferjuarez.bottomnavigationbootstrap.ui.customviews.inputText.InputTextView;
 import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,10 +29,10 @@ public class LoginFragment extends BaseFragment implements LoginContract.View {
     private Unbinder unbinder;
     private OnLoginFragmentsListener listener;
 
-    @BindView(R.id.btnLogin)
-    Button btnLogin;
-    @BindView(R.id.linearLoading)
-    LinearLayout linearLoading;
+    @BindView(R.id.editTextUser)
+    InputTextView editTextUser;
+    @BindView(R.id.editTextPass)
+    InputTextView editTextPass;
 
     @Override
     public void onAttach(Context context) {
@@ -57,26 +55,21 @@ public class LoginFragment extends BaseFragment implements LoginContract.View {
 
     @Override
     public void setUp() {
-        //editTextUser.setOnFocusChangeListener((v, hasFocus) -> validationText(hasFocus));
-        //editTextPass.setOnEditorActionListener((v, actionId, event) -> startLoginWithKeyboard(actionId));
+        editTextUser.setOnFocusChangeListener((v, hasFocus) -> validationQuickEmail(hasFocus));
+        editTextPass.setOnEditorActionListener((v, actionId, event) -> startLoginWithKeyboard(actionId));
     }
 
-    private void showLoading(){
-        linearLoading.setVisibility(View.VISIBLE);
-    }
-
-    private void hideLoading(){
-        linearLoading.setVisibility(View.GONE);
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        presenter.doDispose();
+        disposeInputTextViews();
+        unbinder.unbind();
     }
 
     private void validationQuickEmail(boolean hasFocus) {
-        //if (!hasFocus)
-        //    editTextUser.isEmailValid();
-    }
-
-    private void validationText(boolean hasFocus) {
-        //if (!hasFocus)
-            //editTextUser.isTextValid();
+        if (!hasFocus)
+            editTextUser.isEmailValid();
     }
 
     private boolean startLoginWithKeyboard(int actionId) {
@@ -93,28 +86,17 @@ public class LoginFragment extends BaseFragment implements LoginContract.View {
 
     private void startLogin() {
         if (verifyEmailAndPassword())
-            hideKeyBoard();
-            showLoading();
-            //presenter.startLogin(editTextUser.getText(), editTextPass.getText());
+            presenter.startLogin(editTextUser.getText(), editTextPass.getText());
     }
 
     private boolean verifyEmailAndPassword() {
-        return true; //editTextUser.isTextValid() && editTextPass.isPasswordValid();
-    }
-
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        presenter.doDispose();
-        disposeInputTextViews();
-        unbinder.unbind();
+        return editTextUser.isEmailValid() && editTextPass.isPasswordValid();
     }
 
     private void disposeInputTextViews() {
-        /*editTextUser.setOnFocusChangeListener(null);
+        editTextUser.setOnFocusChangeListener(null);
         editTextUser.doDispose();
-        editTextPass.doDispose();*/
+        editTextPass.doDispose();
     }
 
     /**
@@ -122,15 +104,10 @@ public class LoginFragment extends BaseFragment implements LoginContract.View {
      */
     @Override
     public void changeVisibilityLoading(boolean visibility) {
-        if (visibility) {
-            //this.showLoading();
-            return;
-        }
     }
 
     @Override
     public void showError(String error) {
-        hideLoading();
         Toast.makeText(getContext(), error, Toast.LENGTH_SHORT).show();
     }
 
@@ -139,22 +116,18 @@ public class LoginFragment extends BaseFragment implements LoginContract.View {
 
     }
 
-
-    @Override
-    public void showError(int errorMessage) {
-        hideLoading();
-        Toast.makeText(getContext(), getString(errorMessage), Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void startMainActivity(){
-        listener.goToMainActivity();
-    }
-
     @Override
     public Fragment getFragment() {
         return this;
     }
 
+    @Override
+    public void startMainActivity() {
+        listener.goToMainActivity();
+    }
 
+    @Override
+    public void showError(int errorMessage) {
+
+    }
 }

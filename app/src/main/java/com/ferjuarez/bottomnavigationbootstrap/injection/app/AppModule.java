@@ -17,6 +17,7 @@ import com.ferjuarez.bottomnavigationbootstrap.data.shared.SharedManager;
 import com.ferjuarez.bottomnavigationbootstrap.injection.login.LoginActivityComponent;
 import com.ferjuarez.bottomnavigationbootstrap.injection.main.MainActivityComponent;
 import com.ferjuarez.bottomnavigationbootstrap.injection.splash.SplashActivityComponent;
+import com.ferjuarez.bottomnavigationbootstrap.ui.customviews.inputText.InputTextViewManager;
 import com.ferjuarez.bottomnavigationbootstrap.utils.UtilDate;
 import javax.inject.Singleton;
 import dagger.Module;
@@ -74,5 +75,14 @@ public class AppModule {
     static BottomNavigationDatabase provideRoomDatabase(Context context) {
         return BottomNavigationDatabase.getInstance(context);
     }
+
+    /**
+     * Dependencies without Singleton
+     */
+    @Provides
+    static InputTextViewManager provideInputTextViewManager() {
+        return new InputTextViewManager();
+    }
+
 
 }

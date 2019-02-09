@@ -4,7 +4,6 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
-import android.arch.persistence.room.TypeConverters;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -22,6 +21,10 @@ public class Article implements Parcelable{
     private Long fabricNumber;
     @ColumnInfo
     private String relevadorCode;
+
+    public Article(){
+
+    }
 
     protected Article(Parcel in) {
         id = in.readInt();
@@ -86,6 +89,14 @@ public class Article implements Parcelable{
 
     public void setFabricNumber(Long fabricNumber) {
         this.fabricNumber = fabricNumber;
+    }
+
+    public Long getFabricOrder() {
+        return fabricOrder;
+    }
+
+    public void setFabricOrder(Long fabricOrder) {
+        this.fabricOrder = fabricOrder;
     }
 
     public String getRelevadorCode() {
