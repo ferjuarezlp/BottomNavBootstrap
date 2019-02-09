@@ -9,5 +9,5 @@ public interface DataContract {
 
     Observable<Account> loginMock(String email, String password);
 
-    BottomNavigationDB getRoomDatabase();
+    BottomNavigationDatabase getRoomDatabase();
 }

@@ -8,16 +8,16 @@ import com.ferjuarez.bottomnavigationbootstrap.data.daos.ArticlesDao;
 import com.ferjuarez.bottomnavigationbootstrap.models.articles.Article;
 
 @Database(entities = {Article.class}, version = 1, exportSchema=false)
-public abstract class BottomNavigationDB extends RoomDatabase {
-   private static BottomNavigationDB sInstance;
-   private static final String DATABASE_NAME = "BottomNavigationDB";
+public abstract class BottomNavigationDatabase extends RoomDatabase {
+   private static BottomNavigationDatabase sInstance;
+   private static final String DATABASE_NAME = "BottomNavigationDatabase";
 
    public abstract ArticlesDao getArticlesDao();
 
-   public static synchronized BottomNavigationDB getInstance(Context context) {
+   public static synchronized BottomNavigationDatabase getInstance(Context context) {
       if (sInstance == null) {
          if(context != null && context.getApplicationContext() != null){
-            sInstance = Room.databaseBuilder(context.getApplicationContext(), BottomNavigationDB.class, DATABASE_NAME)
+            sInstance = Room.databaseBuilder(context.getApplicationContext(), BottomNavigationDatabase.class, DATABASE_NAME)
                     .fallbackToDestructiveMigration()
                     //.allowMainThreadQueries()
                     .setJournalMode(JournalMode.TRUNCATE)

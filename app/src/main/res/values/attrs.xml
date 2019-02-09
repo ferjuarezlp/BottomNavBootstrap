@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="InputTextView">
+        <attr name="errorEnabled" format="boolean" />
+        <attr name="maxLengthEnabled" format="boolean" />
+        <attr name="max_text_length" />
+        <attr name="hint" format="string" />
+        <attr name="input_editable" format="boolean" />
+        <attr name="android:text" />
+        <attr name="android:inputType" />
+        <attr name="android:lines" />
+        <attr name="android:enabled" />
+        <attr name="android:gravity" />
+        <attr name="android:textColor" />
+        <attr name="android:textColorHint" />
+    </declare-styleable>
+
+
+</resources>

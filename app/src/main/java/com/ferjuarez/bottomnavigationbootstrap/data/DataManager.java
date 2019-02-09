@@ -11,10 +11,10 @@ import io.reactivex.Observable;
 public class DataManager implements DataContract {
 
     protected final APIServices apiServices;
-    private final BottomNavigationDB roomDatabase;
+    private final BottomNavigationDatabase roomDatabase;
     protected final SharedContract sharedManager;
 
-    public DataManager(APIServices apiServices, SharedContract sharedManager, BottomNavigationDB roomDatabase) {
+    public DataManager(APIServices apiServices, SharedContract sharedManager, BottomNavigationDatabase roomDatabase) {
         this.apiServices = apiServices;
         this.sharedManager = sharedManager;
         this.roomDatabase = roomDatabase;
@@ -34,7 +34,7 @@ public class DataManager implements DataContract {
     }
 
     @Override
-    public BottomNavigationDB getRoomDatabase() {
+    public BottomNavigationDatabase getRoomDatabase() {
         return roomDatabase;
     }
 

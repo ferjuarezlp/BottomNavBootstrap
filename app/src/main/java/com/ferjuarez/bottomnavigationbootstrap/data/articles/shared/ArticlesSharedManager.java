@@ -3,8 +3,6 @@ package com.ferjuarez.bottomnavigationbootstrap.data.articles.shared;
 import android.content.SharedPreferences;
 import android.util.Log;
 import com.ferjuarez.bottomnavigationbootstrap.data.shared.SharedManager;
-import com.ferjuarez.bottomnavigationbootstrap.models.articles.Article;
-import java.util.List;
 import javax.inject.Inject;
 
 public class ArticlesSharedManager extends SharedManager implements ArticlesSharedContract {

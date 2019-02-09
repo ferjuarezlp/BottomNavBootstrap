@@ -4,6 +4,7 @@ import com.ferjuarez.bottomnavigationbootstrap.BottomNavigationApp;
 import com.ferjuarez.bottomnavigationbootstrap.injection.login.LoginActivityModule;
 import com.ferjuarez.bottomnavigationbootstrap.injection.main.MainActivityModule;
 import com.ferjuarez.bottomnavigationbootstrap.injection.splash.SplashActivityModule;
+import com.ferjuarez.bottomnavigationbootstrap.ui.customviews.inputText.InputTextView;
 import javax.inject.Singleton;
 import dagger.BindsInstance;
 import dagger.Component;
@@ -21,4 +22,6 @@ public interface AppComponent {
 
     void inject(BottomNavigationApp bottomNavigationApp);
 
+
+    void inject(InputTextView inputTextView);
 }

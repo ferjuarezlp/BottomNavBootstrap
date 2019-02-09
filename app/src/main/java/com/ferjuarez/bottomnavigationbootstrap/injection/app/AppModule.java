@@ -1,12 +1,11 @@
 package com.ferjuarez.bottomnavigationbootstrap.injection.app;
 
-import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import com.ferjuarez.bottomnavigationbootstrap.BottomNavigationApp;
 import com.ferjuarez.bottomnavigationbootstrap.data.APIServices;
-import com.ferjuarez.bottomnavigationbootstrap.data.BottomNavigationDB;
+import com.ferjuarez.bottomnavigationbootstrap.data.BottomNavigationDatabase;
 import com.ferjuarez.bottomnavigationbootstrap.data.DataContract;
 import com.ferjuarez.bottomnavigationbootstrap.data.DataManager;
 import com.ferjuarez.bottomnavigationbootstrap.data.articles.ArticleDataManager;
@@ -41,14 +40,14 @@ public class AppModule {
     @Provides
     @Singleton
     static DataContract provideDataManager(APIServices apiServices,
-                                           SharedContract sharedManager, BottomNavigationDB roomDatabase) {
+                                           SharedContract sharedManager, BottomNavigationDatabase roomDatabase) {
         return new DataManager(apiServices, sharedManager,roomDatabase);
     }
 
     @Provides
     @Singleton
     static ArticlesDataContract provideArticleDataManager(APIServices apiServices,
-                                                          SharedContract sharedManager, ArticlesSharedContract articlesShared, BottomNavigationDB roomDatabase) {
+                                                          SharedContract sharedManager, ArticlesSharedContract articlesShared, BottomNavigationDatabase roomDatabase) {
         return new ArticleDataManager(apiServices, sharedManager, articlesShared, roomDatabase);
     }
 
@@ -72,8 +71,8 @@ public class AppModule {
 
     @Provides
     @Singleton
-    static BottomNavigationDB provideModaxRoomDatabase(Context context) {
-        return BottomNavigationDB.getInstance(context);
+    static BottomNavigationDatabase provideRoomDatabase(Context context) {
+        return BottomNavigationDatabase.getInstance(context);
     }
 
 }

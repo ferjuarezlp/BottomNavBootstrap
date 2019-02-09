@@ -5,8 +5,28 @@
     <string name="label_sync">SINCRONIZAR</string>
     <string name="label_settings">CONFIGURAR</string>
 
+    <string name="hint_user">Usuario</string>
+    <string name="hint_pass">Contraseña</string>
+
+    <string name="label_title_login">INGRESAR</string>
+    <string name="label_add_article">ARTICULO</string>
+
+    <string name="title_configure_profile">CONFIGURAR PERFIL</string>
+    <string name="title_close_session">CERRAR SESIÓN</string>
+    <string name="title_save">GUARDAR</string>
+
     <string name="error_message_user_pass">Usuario o contraseña invalidos</string>
     <string name="error_user_auth">Error al autentificarse</string>
     <string name="error_message_generic">Error al conectarse al servidor</string>
+    <string name="message_waiting">Espere por favor</string>
+
+    <!--INPUT TEXT VIEW-->
+    <string name="empty">Por favor complete el campo</string>
+    <string name="invalid">Campo Inválido</string>
+    <string name="invalid_email">Email Inválido</string>
+    <string name="password_do_not_match">Las contraseñas no coinciden</string>
+    <string name="field">Field</string>
+
+
 
 </resources>

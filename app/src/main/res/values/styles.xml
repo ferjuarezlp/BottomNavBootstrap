@@ -8,10 +8,79 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="DividerStyle" parent="AppTheme">
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_min</item>
+    </style>
+
+    <style name="DividerGreyStyle" parent="AppTheme">
+        <item name="android:background">@color/darkgrey</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_min</item>
+    </style>
+
+    <!--TEXT STYLES -->
+    <style name="SubtitleStyle" parent="AppTheme">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/text_subtitle</item>
+        <item name="android:fontFamily">@font/arimo</item>
+    </style>
+
+    <style name="GreySubtitleStyle" parent="AppTheme">
+        <item name="android:textColor">@color/darkgrey</item>
+        <item name="android:textSize">@dimen/text_min</item>
+        <item name="android:fontFamily">@font/arimo</item>
+    </style>
+
+    <!--BUTTON -->
     <style name="ButtonStyle" parent="AppTheme">
         <item name="android:background">@color/colorAccent</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:elevation">@dimen/elevation</item>
+    </style>
+
+    <style name="ButtonMinStyle" parent="AppTheme">
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:elevation">@dimen/elevation</item>
+    </style>
+
+    <!--TEXT INPUT LAYOUT-->
+    <style name="EditTextStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">0dp</item>
+        <item name="boxCornerRadiusBottomStart">0dp</item>
+        <item name="boxCornerRadiusTopStart">0dp</item>
+        <item name="boxCornerRadiusTopEnd">0dp</item>
+        <item name="boxBackgroundColor">@android:color/white</item>
+    </style>
+
+    <style name="Error" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textColor">@color/error_color</item>
+    </style>
+
+    <style name="Counter" parent="TextAppearance.Design.Counter">
+        <item name="android:textColor">@color/error_color</item>
+    </style>
+
+    <style name="CounterOverFlow" parent="TextAppearance.Design.Counter.Overflow">
+        <item name="android:textColor">@color/error_color</item>
+    </style>
+
+    <style name="hintAppearance" parent="TextAppearance.Design.Hint">
+        <item name="android:textColorHint">@color/colorAccent</item>
+        <item name="colorControlNormal">#c5c5c5</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
+
+    <style name="ThemeInputTextView" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlActivated">@color/colorPrimary</item>
     </style>
 
 </resources>

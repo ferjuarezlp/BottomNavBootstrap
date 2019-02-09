@@ -22,12 +22,11 @@ public class ErrorInterceptor implements Interceptor {
                     if(response.body() != null){
                         error = response.body().string();
                     }
-                    throw new ErrorResponse(401, error);
+                    throw new ErrorResponse(response.code(), error);
                 } else {
                     throw ErrorResponse.generateError(response.code(), response.body().string());
                 }
             }
-
         } catch (SocketException e){
             throw new ErrorResponse(404, "Connection Closed");
         }

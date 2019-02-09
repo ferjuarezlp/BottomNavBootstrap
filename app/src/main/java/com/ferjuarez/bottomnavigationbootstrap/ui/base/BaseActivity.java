@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 public abstract class BaseActivity extends AppCompatActivity {
-    protected static final String PARAM_ACTION = "action";
 
     protected void replaceFragment(Fragment fragment, int layoutId, boolean addToStack) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

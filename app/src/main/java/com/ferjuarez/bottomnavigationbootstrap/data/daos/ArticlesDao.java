@@ -1,10 +1,8 @@
 package com.ferjuarez.bottomnavigationbootstrap.data.daos;
 
-import android.arch.persistence.db.SupportSQLiteQuery;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
-import android.arch.persistence.room.RawQuery;
 import android.arch.persistence.room.Update;
 import com.ferjuarez.bottomnavigationbootstrap.models.articles.Article;
 import java.util.List;
@@ -34,10 +32,5 @@ public interface ArticlesDao {
 
    @Query("SELECT * FROM article")
    Maybe<List<Article>> getArticles();
-
-   @Query("SELECT * FROM article WHERE code LIKE '%' || :code || '%' ")
-   Maybe<List<Article>> getArticlesByRelevationCode(String code);
-
-   @Query("SELECT incrementalCode from article ORDER BY incrementalCode DESC")
-   Single<Long> getLastIncrementalCode();
+   
 }

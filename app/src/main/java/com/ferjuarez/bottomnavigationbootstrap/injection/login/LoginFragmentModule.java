@@ -1,7 +1,6 @@
 package com.ferjuarez.bottomnavigationbootstrap.injection.login;
 
 import android.support.v4.app.Fragment;
-
 import com.ferjuarez.bottomnavigationbootstrap.data.DataContract;
 import com.ferjuarez.bottomnavigationbootstrap.injection.util.ScopeFragment;
 import com.ferjuarez.bottomnavigationbootstrap.ui.login.LoginContract;

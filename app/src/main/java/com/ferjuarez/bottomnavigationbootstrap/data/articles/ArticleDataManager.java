@@ -2,15 +2,13 @@ package com.ferjuarez.bottomnavigationbootstrap.data.articles;
 
 import android.util.Log;
 import com.ferjuarez.bottomnavigationbootstrap.data.APIServices;
-import com.ferjuarez.bottomnavigationbootstrap.data.BottomNavigationDB;
+import com.ferjuarez.bottomnavigationbootstrap.data.BottomNavigationDatabase;
 import com.ferjuarez.bottomnavigationbootstrap.data.DataManager;
 import com.ferjuarez.bottomnavigationbootstrap.data.articles.shared.ArticlesSharedContract;
 import com.ferjuarez.bottomnavigationbootstrap.data.shared.SharedContract;
 import com.ferjuarez.bottomnavigationbootstrap.models.articles.Article;
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
-
 import java.util.List;
-
 import io.reactivex.Observable;
 import io.reactivex.functions.Function;
 
@@ -18,7 +16,7 @@ public class ArticleDataManager extends DataManager implements ArticlesDataContr
     private final ArticlesSharedContract articlesSharedManager;
 
     public ArticleDataManager(APIServices apiServices, SharedContract sharedManager,
-                              ArticlesSharedContract articlesSharedManager, BottomNavigationDB roomDatabase) {
+                              ArticlesSharedContract articlesSharedManager, BottomNavigationDatabase roomDatabase) {
         super(apiServices, sharedManager, roomDatabase);
         this.articlesSharedManager = articlesSharedManager;
     }
